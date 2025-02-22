@@ -19,6 +19,12 @@ const casesData = [
     description:
       "An explainer video for Original Creation. Produced by Klockworks and animated by MoMotion",
   },
+  {
+    image: "/case/dcop/images/dcop-case-bg.png",
+    title: "DCOP - PC Game",
+    description:
+      "A full motion video on rails shooter. Created in Unity togeather with John Eriksson",
+  },
 ];
 
 const Projects = () => {
