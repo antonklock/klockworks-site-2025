@@ -12,6 +12,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         kwWhite: "#f0efee",
+        kwRed: "#d7251e"
       },
       borderWidth: {
         '0.5': '0.5px',

@@ -22,7 +22,6 @@ const ProjectContent = (props: ProjectContentProps) => {
     handleYellowClick,
     handleGreenClick,
     projectContent,
-    isCollapsed,
   } = props;
   return (
     <>
@@ -44,21 +43,19 @@ const ProjectContent = (props: ProjectContentProps) => {
         </span>
       </div>
 
-      {!isCollapsed && (
-        <>
-          <Image
-            src={projectContent.image}
-            alt={projectContent.title}
-            layout="responsive"
-            width={500}
-            height={500}
-            className="object-cover rounded-lg transition duration-300 ease-in-out"
-          />
-          <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-black bg-opacity-75 flex flex-col p-4 transition duration-300 ease-in-out">
-            <p className="text-sm text-kwWhite">{projectContent.description}</p>
-          </div>
-        </>
-      )}
+      <div>
+        <Image
+          src={projectContent.image}
+          alt={projectContent.title}
+          layout="responsive"
+          width={500}
+          height={500}
+          className="object-cover rounded-lg transition duration-300 ease-in-out"
+        />
+        <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-black bg-opacity-75 flex flex-col p-4 transition duration-300 ease-in-out">
+          <p className="text-sm text-kwWhite">{projectContent.description}</p>
+        </div>
+      </div>
     </>
   );
 };
