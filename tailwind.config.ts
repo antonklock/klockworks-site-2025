@@ -11,6 +11,14 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        kwWhite: "#f0efee",
+      },
+      borderWidth: {
+        '0.5': '0.5px',
+      },
+      scale: {
+        '1': '2',
+        '101': '1.01',
       },
     },
   },
