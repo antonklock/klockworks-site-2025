@@ -33,7 +33,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center p-4">
+    <div className="flex flex-col items-center p-4 mb-16">
       <SectionTitle icon="/icons/flower.svg" title="KLOCK" />
       <div className="flex flex-col md:flex-row items-center w-full gap-4">
         <Image
@@ -47,8 +47,17 @@ const About = () => {
           <p className="text-lg text-left">
             I&apos;m Anton. I&apos;m
             <span className="text-kwRed"> {title} </span>
-            with a passion for all things creative.
+            with a passion for all things creative. I shoot, edit, animate,
+            code, and create new things.
           </p>
+          <div className="mt-4">
+            <a
+              href="mailto:anton@klockworks.se"
+              className="px-6 py-3 bg-kwRed text-white font-bold rounded hover:bg-kwDarkRed transition duration-300"
+            >
+              Let&apos;s Chat
+            </a>
+          </div>
         </div>
       </div>
     </div>
