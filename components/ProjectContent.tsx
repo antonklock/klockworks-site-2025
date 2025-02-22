@@ -1,5 +1,6 @@
 import ThreeCircles from "./ThreeCircles";
 import Image from "next/image";
+
 interface ProjectContent {
   title: string;
   description: string;

@@ -1,5 +1,6 @@
 import Project from "./Project";
 import SectionTitle from "./SectionTitle";
+
 const casesData = [
   {
     image: "/case/RYG/images/ryg-case-bg.png",

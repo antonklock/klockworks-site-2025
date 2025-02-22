@@ -10,7 +10,7 @@ const Header = () => {
         loop
         muted
       />
-      <div className="relative z-10">
+      <div className="relative top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
         <div className="relative top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <Image
             src="/logos/kw-logo-stacked-white.svg"
