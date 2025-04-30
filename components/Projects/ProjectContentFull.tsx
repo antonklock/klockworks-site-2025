@@ -1,4 +1,4 @@
-import ThreeCircles from "./ThreeCircles";
+import ThreeCircles from "../Common/ThreeCircles";
 import Image from "next/image";
 
 interface ProjectContent {
