@@ -35,7 +35,7 @@ const About = () => {
   return (
     <div className="flex flex-col items-center p-4 mb-16">
       <SectionTitle icon="/icons/flower.svg" title="KLOCK" />
-      <div className="flex flex-col md:flex-row items-center w-full gap-4">
+      <div className="flex flex-col md:flex-row items-center w-full max-w-4xl gap-4">
         <Image
           src="/images/anton.jpg"
           alt="About Me"
