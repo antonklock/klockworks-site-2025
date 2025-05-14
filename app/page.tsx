@@ -1,5 +1,5 @@
 import Header from "@/components/Header/Header";
-import Projects from "@/components/Projects/Projects";
+import ProjectList from "@/components/Projects/ProjectList";
 import About from "@/components/About/About";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
         <Header />
         <div className="px-8">
           <About />
-          <Projects />
+          <ProjectList />
         </div>
       </main>
       <footer className="row-start-3 my-12 flex gap-6 flex-wrap items-center justify-center">

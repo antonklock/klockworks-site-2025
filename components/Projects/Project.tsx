@@ -9,11 +9,20 @@ interface ProjectProps {
   title: string;
   description: string;
   software: string[];
+  link: string;
 }
 
-const Project = ({ image, title, description, software }: ProjectProps) => {
+const Project = ({
+  image,
+  title,
+  description,
+  software,
+  link,
+}: ProjectProps) => {
   return (
-    <div className="flex flex-col md:flex-row w-full h-auto md:h-52 items-stretch outline outline-1 outline-gray-800 rounded-lg overflow-hidden">
+    <div
+      className={`flex flex-col md:flex-row w-full h-auto md:h-64 md:max-w-[1000px] items-stretch outline outline-1 outline-gray-800 hover:outline-gray-700 rounded-lg overflow-hidden bg-black transition-all duration-300 hover:scale-[1.02]`}
+    >
       {/* Image */}
       <div className="w-full md:w-52 aspect-square relative flex-shrink-0">
         <Image
@@ -31,7 +40,7 @@ const Project = ({ image, title, description, software }: ProjectProps) => {
         <h2 className="text-2xl mb-2">{title}</h2>
         <p className="text-base mb-2">{description}</p>
         <SoftwareIcons icons={software} />
-        <Button variant="secondary" href="">
+        <Button className="mt-4" variant="secondary" href={link}>
           View Project
         </Button>
       </div>

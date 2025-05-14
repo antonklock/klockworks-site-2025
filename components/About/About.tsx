@@ -19,7 +19,6 @@ const About = () => {
           <RotatingHeadline
             textColor="#FFFFFF"
             highlightColor="#CE5025"
-            textSize={24}
             rotationSpeedMs={4000}
             typingSpeedMs={40}
           />

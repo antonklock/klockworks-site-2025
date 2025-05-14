@@ -8,7 +8,7 @@ const SoftwareIcons = ({ icons }: SoftwareIconsProps) => {
   return (
     <div className="flex gap-2 mb-2">
       {icons.map((icon, index) => (
-        <SoftwareIcon key={index} name={icon} />
+        <SoftwareIcon key={"icon_" + index} name={icon} />
       ))}
     </div>
   );
