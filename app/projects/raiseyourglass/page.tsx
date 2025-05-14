@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import MultiPhotoViewer from "@/components/PhotoView/MultiPhotoViewer";
 import SinglePhotoViewer from "@/components/PhotoView/SinglePhotoViewer";
 
@@ -10,6 +11,12 @@ export const metadata: Metadata = {
 export default function RaiseYourGlassPage() {
   return (
     <article className="max-w-4xl mx-auto px-12 py-8">
+      <Link
+        href="/"
+        className="inline-flex items-center text-kwRed hover:underline mb-4"
+      >
+        ← Back
+      </Link>
       <header className="mb-8">
         <h1 className="text-4xl font-bold">Raise Your Glass</h1>
         <div className="text-gray-600">
@@ -18,7 +25,7 @@ export default function RaiseYourGlassPage() {
       </header>
 
       <div className="prose prose-lg font-mono">
-        <p className="lead mb-6">
+        <p className="lead mb-6 mt-6">
           Partnering with the rowdy pirate folk band{" "}
           <a
             className="text-kwRed hover:underline"
@@ -56,7 +63,7 @@ export default function RaiseYourGlassPage() {
         </strong>
 
         <h2 className="font-bold text-4xl mt-8 mb-2">The Experience</h2>
-        <p className="mb-6">
+        <p className="mb-6 mt-6">
           The adventure begins as the user groggily awakens in a tavern loft.
           Through point-and-click interactions within the live-action video,
           players explore the environment and the band members. Each click
@@ -80,7 +87,7 @@ export default function RaiseYourGlassPage() {
         <h2 className="font-bold text-4xl mt-8 mb-2">
           Development & Production
         </h2>
-        <p className="mb-6">
+        <p className="mb-6 mt-6">
           The project kicked off with collaborative concept development
           alongside YBP, mapping out the branching narrative possibilities in a
           detailed flowchart.{" "}
@@ -92,7 +99,7 @@ export default function RaiseYourGlassPage() {
           }
         />
 
-        <p className="mb-6">
+        <p className="mb-6 mt-6">
           To visualize scene blocking and camera angles early on, I created
           preliminary 3D mockups using Unreal Engine. These were also used for
           early testing the concept of seamless video switching in the browser.
@@ -106,7 +113,7 @@ export default function RaiseYourGlassPage() {
           ]}
         />
 
-        <p className="mb-6">
+        <p className="mb-6 mt-6">
           The core full-motion video was shot over four days, plus an additional
           day dedicated to the opening scene, utilizing various locations around
           Umeå, Sweden. We employed creative practical effects to enhance the
@@ -119,33 +126,37 @@ export default function RaiseYourGlassPage() {
           images={[
             "https://framerusercontent.com/images/MdgLGZcP2DLB4rG0D4uThzKCCSk.jpg",
             "https://framerusercontent.com/images/cP3HDJ9d5r4PSTwrCqlUoJ1UM.jpg",
+            "https://2b46b32ca0318933bea825a208cf2131.r2.cloudflarestorage.com/klockworks-media/projects/ybp-raiseyourglass/images/bts/_DSC7981.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=9ae6561775ecb581d985f247aabc6797%2F20250514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250514T213314Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=6f038793da2b49e49fa54b685c7170018a275b5221f1f8f464360e12d41d96d6",
+            "https://2b46b32ca0318933bea825a208cf2131.r2.cloudflarestorage.com/klockworks-media/projects/ybp-raiseyourglass/images/bts/_DSC8007.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=9ae6561775ecb581d985f247aabc6797%2F20250514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250514T213315Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=a7dcfa06cd3d1c4ea21f0490f43ab8ca89802fa87820e8acbb9064eeba911564",
+            "https://2b46b32ca0318933bea825a208cf2131.r2.cloudflarestorage.com/klockworks-media/projects/ybp-raiseyourglass/images/bts/_DSC8027.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=9ae6561775ecb581d985f247aabc6797%2F20250514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250514T213315Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=19ac38958a8d09b221995bce4dbf52f8aa400cf3ad0e73336d3f5d4e0d12c598",
+            "https://2b46b32ca0318933bea825a208cf2131.r2.cloudflarestorage.com/klockworks-media/projects/ybp-raiseyourglass/images/bts/_DSC8057.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=9ae6561775ecb581d985f247aabc6797%2F20250514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250514T213315Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=e148ecfbdb7466a9141bd3d345ae576210e38fa48dc395b1cef29e9fdcd56a13",
           ]}
         />
 
         <h2 className="font-bold text-4xl mt-8 mb-2">
           Technical Implementation & Challenges
         </h2>
-        <p className="mb-6">
+        <p className="mb-6 mt-6">
           A key requirement from YBP was high accessibility: the experience
           needed to run smoothly in a web browser without requiring any
           downloads. This led to exploring various web video technologies.
         </p>
 
         <h3 className="font-bold text-xl">Core functionality and challenges</h3>
-        <p className="mb-6">
+        <p className="mb-6 mt-6">
           The core technical solution involves dynamically stacking HTML5 video
           elements, preloading potential next video clips based on user
           interaction points, and unloading clips that are no longer reachable
           in the narrative tree.
         </p>
-        <p className="mb-6">
+        <p className="mb-6 mt-6">
           Initial tests with streaming platforms like Cloudflare Stream and MUX
           revealed potential cost issues due to their quota-based pricing. Given
           the video&apos;s length (over four minutes) and the aggressive
           preloading strategy needed for seamless transitions, these quotas
           could be rapidly consumed, leading to great costs at scale.
         </p>
-        <p className="mb-6">
+        <p className="mb-6 mt-6">
           Inspired by research (including helpful insights from{" "}
           <a
             className="text-kwRed hover:underline"
@@ -169,14 +180,14 @@ export default function RaiseYourGlassPage() {
         </p>
 
         <h2 className="font-bold text-4xl mt-8 mb-2">Frontend</h2>
-        <p className="mb-6">
+        <p className="mb-6 mt-6">
           The frontend was built using Next.js, managing the video component
           loading, swapping, and unloading logic. For interactivity, PixiJS was
           layered over the video elements, providing an efficient way to manage
           hitboxes, graphical overlays, and the custom point-and-click style
           cursor, enhancing the old-school adventure game aesthetic.
         </p>
-        <p className="mb-6">
+        <p className="mb-6 mt-6">
           An experimental feature involving rendering the video to a canvas and
           applying real-time shader effects (distortions, color grading) was
           prototyped. While promising on high-end machines, performance
@@ -186,7 +197,7 @@ export default function RaiseYourGlassPage() {
           round trip) remains an interesting area for future exploration.
         </p>
 
-        <p className="mb-6">
+        <p className="mb-6 mt-6">
           Since the music is running as it&apos;s own audio file the videos are
           being synced to it when they are preloaded. If the video drifts for
           some reason it can be slightly slowed down or sped up to get back into
@@ -196,7 +207,7 @@ export default function RaiseYourGlassPage() {
         <h2 className="font-bold text-4xl mt-8 mb-2">
           Data & Future Potential
         </h2>
-        <p className="mb-6">
+        <p className="mb-6 mt-6">
           Each playthrough is anonymously tracked by logging interaction choices
           (hitbox clicks) and timestamps to Supabase. This data allows for easy
           session recreation and analysis. While not implemented within the

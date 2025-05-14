@@ -19,7 +19,7 @@ const wordsToRotate = [
 ];
 const preString = "I'm Anton, ";
 const postString =
-  "with a love for dynamic & playful experiences. Let's cook up some video content, motion graphics, web or game magic!";
+  "with a love for dynamic & playful experiences. Let's cook up some video, motion graphics, web or game magic together!";
 
 interface RotatingHeadlineProps {
   textColor: string;

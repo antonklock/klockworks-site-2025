@@ -52,7 +52,7 @@ const SoftwareIcon = ({ name }: SoftwareIconProps) => {
 
       {isHovered && (
         <div
-          className="fixed z-50 px-3 py-2 text-base bg-black text-white rounded-e-md rounded-tl-md outline outline-1 outline-white pointer-events-none"
+          className="fixed z-50 px-3 py-2 text-base bg-[rgba(0,0,0,0.5)] backdrop-blur-sm text-white rounded-e-md rounded-tl-md outline outline-1 outline-white pointer-events-none"
           style={{
             left: `${mousePosition.x}px`,
             top: `${mousePosition.y}px`,
