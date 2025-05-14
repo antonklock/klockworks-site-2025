@@ -51,7 +51,7 @@ export function RotatingHeadline(props: Readonly<RotatingHeadlineProps>) {
         let currentLetterIndex = 0;
         const typeLetter = () => {
           if (currentLetterIndex <= word.length) {
-            setDisplayedWord(word.substring(0, currentLetterIndex));
+            setDisplayedWord(() => word.substring(0, currentLetterIndex));
             currentLetterIndex++;
             typingTimeoutRef.current = setTimeout(typeLetter, typingSpeedMs);
           } else {
@@ -74,7 +74,7 @@ export function RotatingHeadline(props: Readonly<RotatingHeadlineProps>) {
         let currentLength = displayedWord.length;
         const deleteLetter = () => {
           if (currentLength > 0) {
-            setDisplayedWord(displayedWord.substring(0, currentLength - 1));
+            setDisplayedWord((word) => word.substring(0, currentLength - 1));
             currentLength--;
             typingTimeoutRef.current = setTimeout(deleteLetter, typingSpeedMs);
           } else {
