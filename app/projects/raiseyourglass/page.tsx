@@ -37,7 +37,7 @@ export default function RaiseYourGlassPage() {
           (YBP), and the amazing cinematographer{" "}
           <a
             className="text-kwRed hover:underline"
-            href="https://www.yebanishedprivateers.com/"
+            href="https://www.instagram.com/kenneth.ly/"
             target="_blank"
           >
             Kenneth Ly
