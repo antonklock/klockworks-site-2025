@@ -1,7 +1,7 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import MultiPhotoViewer from "@/components/PhotoView/MultiPhotoViewer";
 import SinglePhotoViewer from "@/components/PhotoView/SinglePhotoViewer";
+import BackButton from "@/components/Common/BackButton";
 
 export const metadata: Metadata = {
   title: "Raise Your Glass - Project",
@@ -11,12 +11,7 @@ export const metadata: Metadata = {
 export default function RaiseYourGlassPage() {
   return (
     <article className="max-w-4xl mx-auto px-12 py-8">
-      <Link
-        href="/"
-        className="inline-flex items-center text-kwRed hover:underline mb-4"
-      >
-        ← Back
-      </Link>
+      <BackButton />
       <header className="mb-8">
         <h1 className="text-4xl font-bold">Raise Your Glass</h1>
         <div className="text-gray-600">
@@ -126,10 +121,10 @@ export default function RaiseYourGlassPage() {
           images={[
             "https://framerusercontent.com/images/MdgLGZcP2DLB4rG0D4uThzKCCSk.jpg",
             "https://framerusercontent.com/images/cP3HDJ9d5r4PSTwrCqlUoJ1UM.jpg",
-            "https://2b46b32ca0318933bea825a208cf2131.r2.cloudflarestorage.com/klockworks-media/projects/ybp-raiseyourglass/images/bts/_DSC7981.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=9ae6561775ecb581d985f247aabc6797%2F20250514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250514T213314Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=6f038793da2b49e49fa54b685c7170018a275b5221f1f8f464360e12d41d96d6",
-            "https://2b46b32ca0318933bea825a208cf2131.r2.cloudflarestorage.com/klockworks-media/projects/ybp-raiseyourglass/images/bts/_DSC8007.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=9ae6561775ecb581d985f247aabc6797%2F20250514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250514T213315Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=a7dcfa06cd3d1c4ea21f0490f43ab8ca89802fa87820e8acbb9064eeba911564",
-            "https://2b46b32ca0318933bea825a208cf2131.r2.cloudflarestorage.com/klockworks-media/projects/ybp-raiseyourglass/images/bts/_DSC8027.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=9ae6561775ecb581d985f247aabc6797%2F20250514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250514T213315Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=19ac38958a8d09b221995bce4dbf52f8aa400cf3ad0e73336d3f5d4e0d12c598",
-            "https://2b46b32ca0318933bea825a208cf2131.r2.cloudflarestorage.com/klockworks-media/projects/ybp-raiseyourglass/images/bts/_DSC8057.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=9ae6561775ecb581d985f247aabc6797%2F20250514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250514T213315Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=e148ecfbdb7466a9141bd3d345ae576210e38fa48dc395b1cef29e9fdcd56a13",
+            "https://www.kwmedia.klockworks.xyz/projects/ybp-raiseyourglass/images/bts/_DSC7981.jpg",
+            "https://www.kwmedia.klockworks.xyz/projects/ybp-raiseyourglass/images/bts/_DSC8007.jpg",
+            "https://www.kwmedia.klockworks.xyz/projects/ybp-raiseyourglass/images/bts/_DSC8027.jpg",
+            "https://www.kwmedia.klockworks.xyz/projects/ybp-raiseyourglass/images/bts/_DSC8057.jpg",
           ]}
         />
 

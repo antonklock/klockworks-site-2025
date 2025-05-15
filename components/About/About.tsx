@@ -6,7 +6,7 @@ import Button from "../Common/Button";
 
 const About = () => {
   return (
-    <div className="flex flex-col items-center justify-center p-4 mb-16 ">
+    <div className="flex flex-col items-center justify-center w-full p-4 pt-16 pb-24">
       <div className="flex flex-col md:flex-row items-center w-full max-w-4xl gap-6 md:gap-16">
         <Image
           src="/images/anton.jpg"

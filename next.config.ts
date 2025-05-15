@@ -15,6 +15,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: '2b46b32ca0318933bea825a208cf2131.r2.cloudflarestorage.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'placehold.co',
+      },
     ],
   },
 };
