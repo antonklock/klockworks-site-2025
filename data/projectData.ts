@@ -1,6 +1,6 @@
 export const projectsData = [
     {
-        image: "/case/RYG/images/ryg-case-bg.png",
+        image: "/case/RYG/images/ryg-case-thumb.jpg",
         title: "YBP - INTERACTIVE MUSIC VIDEO",
         description:
             "Interactive music video on the web. Using live aciton video, HLS streams and Pixi.js",
@@ -8,7 +8,7 @@ export const projectsData = [
         link: "/projects/raiseyourglass",
     },
     {
-        image: "/case/LHF/images/lhf-case-bg.png",
+        image: "/case/LHF/images/lhf-case-thumb.jpg",
         title: "ARENA INTRO ANIMATIONS",
         description:
             "Arena animations for when Luleå hockey teams enter the ice. Multi display synching animations",
@@ -16,12 +16,12 @@ export const projectsData = [
         link: "/projects/lhf-graphic-updates",
     },
     {
-        image: "/case/OC/images/oc-case-bg.png",
-        title: "ORIGINAL CREATION EXPLAINER",
+        image: "/case/google-phone-anims/images/google-phone-anims_01.jpg",
+        title: "GOOGLE PHONE ANIMATION",
         description:
-            "Explainer video for Original Creation. Produced by Klockworks and animated by MoMotion",
-        software: [],
-        link: "/projects/original-creation",
+            "Google phone animation for the launch of the Pixel 7",
+        software: ["premiere", "blender"],
+        link: "/projects/google-phone-animation",
     },
     {
         image: "/case/dcop/images/dcop-case-bg.png",

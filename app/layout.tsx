@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${baijamjuree.className} antialiased`}>
-        <NoiseBackground className="opacity-[0.3]" />
+        <NoiseBackground className="opacity-[0.5]" />
         {children}
       </body>
     </html>

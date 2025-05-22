@@ -4,7 +4,7 @@ import { projectsData } from "@/data/projectData";
 
 const ProjectList = () => {
   return (
-    <div className="flex flex-col">
+    <div id="projects" className="flex flex-col project-list">
       <SectionTitle icon="/icons/swoosh.svg" title="Latest projects" />
       <div className="flex flex-col gap-4 justify-center items-center">
         {projectsData.map((projectItem, index) => (

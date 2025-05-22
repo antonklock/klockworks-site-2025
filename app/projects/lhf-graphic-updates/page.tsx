@@ -1,6 +1,4 @@
 import { Metadata } from "next";
-import MultiPhotoViewer from "@/components/PhotoView/MultiPhotoViewer";
-import SinglePhotoViewer from "@/components/PhotoView/SinglePhotoViewer";
 import BackButton from "@/components/Common/BackButton";
 
 export const metadata: Metadata = {
@@ -13,84 +11,150 @@ export default function LHFGraphicUpdatesPage() {
     <article className="max-w-4xl mx-auto px-12 py-8">
       <BackButton href="/" />
       <header className="mb-8">
-        <h1 className="text-4xl font-bold">LHF Graphic Updates</h1>
+        <h1 className="text-4xl font-bold">
+          Luleå Hockey Intro Animations (2025 Update)
+        </h1>
         <div className="text-gray-600">
           <time dateTime="2025-03-15">March 15, 2025</time>
         </div>
       </header>
 
       <div className="prose prose-lg font-mono">
+        <h2 className="font-bold text-4xl mt-8 mb-2">TL;DR</h2>
         <p className="lead mb-6 mt-6">
-          A comprehensive graphic design update project for LHF, focusing on
-          modernizing their visual identity while maintaining their core brand
-          values. This project encompassed everything from logo refinement to
-          complete brand guideline development.
+          Annual collaboration with agency Samuraj to update Luleå Hockey&apos;s
+          intro animations across the arena&apos;s screens and ice projection.
+          This year&apos;s focus was refining existing sequences: goal
+          celebration, TNT song, player introductions, and player entry
+          animation. Technical improvements included custom scripting and 3D
+          visualization of the arena for seamless screen integration.
         </p>
-
-        <h2 className="font-bold text-4xl mt-8 mb-2">The Project</h2>
+        <h2 className="font-bold text-4xl mt-8 mb-2">Project Overview</h2>
         <p className="mb-6 mt-6">
-          The project began with an in-depth analysis of LHF&apos;s existing
-          brand assets and market positioning. Through collaborative workshops
-          and iterative design processes, we developed a refreshed visual
-          language that better represents their mission and values while
-          appealing to their target audience.
+          This project is part of a yearly collaboration with the creative
+          agency{" "}
+          <a
+            href="https://www.samuraj.se/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-kwRed hover:underline"
+          >
+            Samuraj
+          </a>
+          , where we create and maintain intro and in-game animations for Luleå
+          Hockey. The animations are played across multiple displays in the
+          arena—including a newly installed LED cube—and a large ice projection
+          system.
         </p>
-
-        <MultiPhotoViewer
-          images={[
-            "https://placehold.co/800x600/333/white?text=Before+Design",
-            "https://placehold.co/800x600/333/white?text=After+Design",
-            "https://placehold.co/800x600/333/white?text=Design+Process",
-            "https://placehold.co/800x600/333/white?text=Final+Assets",
-          ]}
-          unoptimized={true}
-        />
-
-        <h2 className="font-bold text-4xl mt-8 mb-2">Design Process</h2>
         <p className="mb-6 mt-6">
-          Our approach involved multiple stages of development, from initial
-          concept exploration to final asset delivery. Each phase was carefully
-          documented and presented to stakeholders for feedback and refinement.
+          Unlike previous years where we created a brand new intro, this
+          year&apos;s focus was on updating four existing sequences:
         </p>
-
-        <SinglePhotoViewer
-          image="https://placehold.co/1200x800/333/white?text=Design+Process+Timeline"
-          unoptimized={true}
-        />
-
-        <h2 className="font-bold text-4xl mt-8 mb-2">Implementation</h2>
+        <ul className="list-disc pl-6 mb-6">
+          <li>The Goal Sequence</li>
+          <li>The TNT Sequence</li>
+          <li>Player Entry</li>
+          <li>Player Presentations</li>
+        </ul>
+        <h2 className="font-bold text-4xl mt-8 mb-2">
+          Preproduction & Workflow
+        </h2>
         <p className="mb-6 mt-6">
-          The new design system was implemented across various touchpoints,
-          including digital platforms, print materials, and physical spaces.
-          Special attention was paid to ensuring consistency across all
-          applications while maintaining flexibility for future adaptations.
+          Samuraj typically supplies a concept deck that includes rough sketches
+          and early visual assets. Based on that, I develop a rough animation
+          outline that locks in pacing and the overall concept.
         </p>
-
-        <MultiPhotoViewer
-          images={[
-            "https://placehold.co/800x600/333/white?text=Digital+Implementation",
-            "https://placehold.co/800x600/333/white?text=Print+Materials",
-            "https://placehold.co/800x600/333/white?text=Physical+Spaces",
-          ]}
-          unoptimized={true}
-        />
-
-        <h2 className="font-bold text-4xl mt-8 mb-2">Results & Impact</h2>
         <p className="mb-6 mt-6">
-          The updated visual identity has significantly improved brand
-          recognition and engagement across all platforms. The new design system
-          provides a solid foundation for future growth while maintaining the
-          organization&apos;s established reputation and trust with its
-          audience.
+          To help align screen content and transitions, I&apos;ve also developed
+          a custom 3D visualizer of the arena. This tool helps us simulate and
+          plan how animations look across the arena&apos;s irregular screen
+          setup.
         </p>
-
-        <h2 className="font-bold text-4xl mt-8 mb-2">Tools & Technologies</h2>
+        <video autoPlay={false} controls>
+          <source
+            src="https://www.dropbox.com/scl/fi/3xavx6kfabnwrzgv0rc4s/3d-arena-visualizer.mov?rlkey=y384px858usby1mrd202rwud3&dl=1"
+            type="video/mp4"
+          />
+        </video>
+        <h2 className="font-bold text-4xl mt-8 mb-2">
+          TNT Sequence – &quot;LU-LE-Å&quot;
+        </h2>
         <p className="mb-6 mt-6">
-          The project utilized industry-standard design tools including Adobe
-          Creative Suite, Figma for collaborative design work, and various
-          prototyping tools for testing and validation. The final deliverables
-          included comprehensive brand guidelines and asset libraries for both
-          digital and print applications.
+          Before the players enter the ice, the crowd sings a version of
+          AC/DC&apos;s &quot;TNT&quot;, replacing the letters with
+          &quot;LU-LE-Å&quot;. The sequence ends with the arena chanting
+          &quot;…watch me explode!&quot;—which of course calls for a giant
+          virtual explosion.
+        </p>
+        <p className="mb-6 mt-6">
+          To support this moment, we animated a burning fuse wrapping around the
+          mid-cube screens. Due to the cube&apos;s varying sizes and tiled
+          layout, this required significant technical tweaking. The result is a
+          high-impact sequence that makes full use of the new continuous LED
+          cube.
+        </p>
+        <video autoPlay={false} controls>
+          <source
+            src="https://www.dropbox.com/scl/fi/xsec2zkf6gs5dfxm1mw4t/TNT-in-arena.mov?rlkey=rbdk3f2zc5zefwa6l2l7folvp&dl=1"
+            type="video/mp4"
+          />
+        </video>
+        <h2 className="font-bold text-4xl mt-8 mb-2">
+          Goal Sequence – The Flaming Puck
+        </h2>
+        <p className="mb-6 mt-6">
+          When LHF scores, instead of showing text like &quot;GOAL&quot;, the
+          team requested a more symbolic animation. We designed a flaming puck
+          that descends from the LED cube, crashes into the ice, and triggers a
+          fiery explosion across the arena&apos;s lower screens and floor
+          projection.
+        </p>
+        <p className="mb-6 mt-6">
+          Since this plays during the match, only lower screens and the ice are
+          used—ensuring the sequence is both dramatic and non-intrusive.
+        </p>
+        <video controls={false} muted autoPlay loop>
+          <source
+            src="https://www.dropbox.com/scl/fi/583o0r03ejm6q96hzfz5x/PuckSpin_CONTENT.mp4?rlkey=r5h080ta1hh2gtlozs2qjv8do&dl=1"
+            type="video/mp4"
+          />
+        </video>
+        <h2 className="font-bold text-4xl mt-8 mb-2">
+          Player Entry – Flow of Sparks
+        </h2>
+        <p className="mb-6 mt-6">
+          For the entry animation, the team wanted something subtle but dynamic:
+          a flow of glowing sparks emerging from the player entrance and
+          traveling across the ice. These sparks bounce off virtual walls to add
+          depth and realism to the projection.
+        </p>
+        <video autoPlay={false} controls>
+          <source
+            src="https://www.dropbox.com/scl/fi/uv14ia4vopqiy9v5myc3f/2025-01-22-ICE-SPELARNA_IN-36s.mp4?rlkey=0zgo08zi6o148souc7lvzav3p&dl=1"
+            type="video/mp4"
+          />
+        </video>
+
+        <h2 className="font-bold text-4xl mt-8 mb-2">Player Presentations</h2>
+        <p className="mb-6 mt-6">
+          These are updated each season with new players, names, numbers, and
+          images. Thanks to a custom script I&apos;ve built, generating updated
+          player presentations is a streamlined process—minimizing manual work
+          while maintaining high visual consistency.
+        </p>
+        <video autoPlay={false} controls>
+          <source
+            src="https://www.dropbox.com/scl/fi/xvwvq8z2rc8342hpg62dn/lineup.mov?rlkey=kuag2frq9j4wh894m5btlzney&dl=1"
+            type="video/mp4"
+          />
+        </video>
+
+        <h2 className="font-bold text-4xl mt-8 mb-2">Technical Notes</h2>
+        <p className="mb-6 mt-6">
+          All videos are rendered in ProRes, then transcoded to HAP for playback
+          in the arena. Since neither After Effects nor Adobe Media Encoder
+          supports HAP natively, I wrote a custom export script to automate this
+          part of the pipeline.
         </p>
       </div>
     </article>

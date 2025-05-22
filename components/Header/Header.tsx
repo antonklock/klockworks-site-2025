@@ -12,8 +12,10 @@ const Header = () => {
     const video = videoRef.current;
     if (!video) return;
 
-    const videoSrc =
-      "https://www.kwmedia.klockworks.xyz/showreel-2025_v4/playlist.m3u8";
+    const isVerticalScreen = window.innerHeight > window.innerWidth;
+    const videoSrc = !isVerticalScreen
+      ? "https://www.kwmedia.klockworks.xyz/showreel-2025_v5/showreel-2025_v5_9x16/playlist.m3u8"
+      : "https://www.kwmedia.klockworks.xyz/showreel-2025_v5/showreel-2025_v5_16x9/playlist.m3u8";
 
     if (Hls.isSupported()) {
       const hls = new Hls();

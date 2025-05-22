@@ -1,6 +1,4 @@
 import { Metadata } from "next";
-import MultiPhotoViewer from "@/components/PhotoView/MultiPhotoViewer";
-import SinglePhotoViewer from "@/components/PhotoView/SinglePhotoViewer";
 import BackButton from "@/components/Common/BackButton";
 
 export const metadata: Metadata = {
@@ -15,12 +13,38 @@ export default function DCOPPage() {
       <header className="mb-8">
         <h1 className="text-4xl font-bold">DCOP</h1>
         <div className="text-gray-600">
-          <time dateTime="2025-03-25">March 25, 2025</time>
+          <time dateTime="2024-02-25">May 22, 2025</time>
         </div>
       </header>
 
       <div className="prose prose-lg font-mono">
+        <h2 className="text-2xl font-bold">Project Overview</h2>
         <p className="lead mb-6 mt-6">
+          DCOP is a full motion video on rails shooter game. Created in Unity
+          together with John Eriksson. I was responsible for all programming and
+          technical implementations.
+        </p>
+        <p className="lead mb-6 mt-6">
+          More info coming soon! Until then check out the trailer or{" "}
+          <span>
+            <a
+              href="https://store.steampowered.com/app/2542320/DCOP/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-kwRed hover:underline"
+            >
+              visit the Steam Page
+            </a>
+          </span>
+        </p>
+
+        <video autoPlay={false} controls>
+          <source
+            src="https://www.dropbox.com/scl/fi/vr1odc63dpfyxpdaqutfy/DCOP-Game-Trailer-01.mp4?rlkey=2y4uvguc4fz2qfy7j8evw4e4s&dl=1"
+            type="video/mp4"
+          />
+        </video>
+        {/* <p className="lead mb-6 mt-6">
           A comprehensive project focused on developing and implementing a
           distributed control system for optimizing operational processes. This
           project showcases the integration of advanced control algorithms with
@@ -98,7 +122,7 @@ export default function DCOPPage() {
           seamless integration with existing systems. The frontend was built
           using React and TypeScript, providing a responsive and intuitive user
           interface.
-        </p>
+        </p> */}
       </div>
     </article>
   );
