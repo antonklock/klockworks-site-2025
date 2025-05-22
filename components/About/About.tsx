@@ -24,9 +24,9 @@ const About = () => {
           />
           <div className="mt-4 flex gap-2">
             <Button href="mailto:anton@klockworks.se">Say hello!</Button>
-            <Button variant="secondary" href="">
+            {/* <Button variant="secondary" href="">
               Entire Life story
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>
