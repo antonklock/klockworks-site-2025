@@ -22,12 +22,21 @@ export default function LHFGraphicUpdatesPage() {
       <div className="prose prose-lg font-mono">
         <h2 className="font-bold text-4xl mt-8 mb-2">TL;DR</h2>
         <p className="lead mb-6 mt-6">
-          Annual collaboration with agency Samuraj to update Luleå Hockey&apos;s
-          intro animations across the arena&apos;s screens and ice projection.
-          This year&apos;s focus was refining existing sequences: goal
-          celebration, TNT song, player introductions, and player entry
-          animation. Technical improvements included custom scripting and 3D
-          visualization of the arena for seamless screen integration.
+          Annual collaboration with agency{" "}
+          <a
+            href="https://www.samuraj.se/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-kwRed hover:underline"
+          >
+            Samuraj
+          </a>{" "}
+          to update Luleå Hockey&apos;s intro animations across the arena&apos;s
+          screens and ice projection. This year&apos;s focus was refining
+          existing sequences: goal celebration, TNT song, player introductions,
+          and player entry animation. Technical improvements included custom
+          scripting and 3D visualization of the arena for seamless screen
+          integration.
         </p>
         <h2 className="font-bold text-4xl mt-8 mb-2">Project Overview</h2>
         <p className="mb-6 mt-6">
@@ -72,7 +81,7 @@ export default function LHFGraphicUpdatesPage() {
         </p>
         <video autoPlay={false} controls>
           <source
-            src="https://www.dropbox.com/scl/fi/3xavx6kfabnwrzgv0rc4s/3d-arena-visualizer.mov?rlkey=y384px858usby1mrd202rwud3&dl=1"
+            src="https://www.kwmedia.klockworks.xyz/projects/lhf/3d-arena-visualizer.mov"
             type="video/mp4"
           />
         </video>
@@ -95,7 +104,7 @@ export default function LHFGraphicUpdatesPage() {
         </p>
         <video autoPlay={false} controls>
           <source
-            src="https://www.dropbox.com/scl/fi/xsec2zkf6gs5dfxm1mw4t/TNT-in-arena.mov?rlkey=rbdk3f2zc5zefwa6l2l7folvp&dl=1"
+            src="https://www.kwmedia.klockworks.xyz/projects/lhf/TNT-in-arena.mp4"
             type="video/mp4"
           />
         </video>
@@ -115,7 +124,7 @@ export default function LHFGraphicUpdatesPage() {
         </p>
         <video controls={false} muted autoPlay loop>
           <source
-            src="https://www.dropbox.com/scl/fi/583o0r03ejm6q96hzfz5x/PuckSpin_CONTENT.mp4?rlkey=r5h080ta1hh2gtlozs2qjv8do&dl=1"
+            src="https://www.kwmedia.klockworks.xyz/projects/lhf/PuckSpin.mp4"
             type="video/mp4"
           />
         </video>
@@ -130,7 +139,7 @@ export default function LHFGraphicUpdatesPage() {
         </p>
         <video autoPlay={false} controls>
           <source
-            src="https://www.dropbox.com/scl/fi/uv14ia4vopqiy9v5myc3f/2025-01-22-ICE-SPELARNA_IN-36s.mp4?rlkey=0zgo08zi6o148souc7lvzav3p&dl=1"
+            src="https://www.kwmedia.klockworks.xyz/projects/lhf/Player-Entry.mp4"
             type="video/mp4"
           />
         </video>
@@ -144,7 +153,7 @@ export default function LHFGraphicUpdatesPage() {
         </p>
         <video autoPlay={false} controls>
           <source
-            src="https://www.dropbox.com/scl/fi/xvwvq8z2rc8342hpg62dn/lineup.mov?rlkey=kuag2frq9j4wh894m5btlzney&dl=1"
+            src="https://www.kwmedia.klockworks.xyz/projects/lhf/lineup.mp4"
             type="video/mp4"
           />
         </video>

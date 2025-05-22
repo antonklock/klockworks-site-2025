@@ -40,7 +40,7 @@ export default function DCOPPage() {
 
         <video autoPlay={false} controls>
           <source
-            src="https://www.dropbox.com/scl/fi/vr1odc63dpfyxpdaqutfy/DCOP-Game-Trailer-01.mp4?rlkey=2y4uvguc4fz2qfy7j8evw4e4s&dl=1"
+            src="https://www.kwmedia.klockworks.xyz/projects/dcop/DCOP%20Game%20Trailer%2001.mp4"
             type="video/mp4"
           />
         </video>
