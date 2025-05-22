@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Hls from "hls.js";
 import ScrollArrow from "./ScrollArrow";
+import BouncingLogo from "./BouncingLogo";
 
 const Header = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -103,6 +104,12 @@ const Header = () => {
       <div className="relative top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
         <ScrollArrow />
       </div>
+      {/* <BouncingLogo
+        initialSpeed={0.5}
+        maxSpeed={1}
+        acceleration={1}
+        logoSize={250}
+      /> */}
     </header>
   );
 };
