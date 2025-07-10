@@ -2,12 +2,10 @@ import Header from "@/components/Header/Header";
 import ProjectList from "@/components/Projects/ProjectList";
 import About from "@/components/About/About";
 import RgbStripes from "@/components/Styling/RgbStripes";
-import NoiseBackground from "@/components/Styling/NoiseBackground";
 
 export default function Home() {
   return (
     <div className="relative">
-      <NoiseBackground className="opacity-50" />
       <main className="flex flex-col overflow-hidden">
         <Header />
         <div className="flex flex-col items-center px-8">
