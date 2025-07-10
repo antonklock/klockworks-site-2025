@@ -37,7 +37,12 @@ export default function GooglePhoneAnimationPage() {
         </p>
       </div>
 
-      <video autoPlay={false} controls>
+      <video 
+        autoPlay={false} 
+        controls 
+        poster="/videoThumbs/google-phone-thumbnail.jpg"
+        className="w-full h-auto"
+      >
         <source
           src="https://www.kwmedia.klockworks.xyz/projects/google/pixel8-anims/google_closeUps_white_01.mp4"
           type="video/mp4"

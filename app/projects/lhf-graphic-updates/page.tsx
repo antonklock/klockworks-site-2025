@@ -77,9 +77,15 @@ export default function LHFGraphicUpdatesPage() {
           To help align screen content and transitions, I&apos;ve also developed
           a custom 3D visualizer of the arena. This tool helps us simulate and
           plan how animations look across the arena&apos;s irregular screen
-          setup.
+          setup. This works with both rendered video as well as a direct live
+          preview using NDI from After Effects directly into Blender.
         </p>
-        <video autoPlay={false} controls>
+        <video
+          autoPlay={false}
+          controls
+          poster="/videoThumbs/lhf-arena-visualizer-thumbnail.jpg"
+          className="w-full h-auto"
+        >
           <source
             src="https://www.kwmedia.klockworks.xyz/projects/lhf/3d-arena-visualizer.mov"
             type="video/mp4"
@@ -102,7 +108,12 @@ export default function LHFGraphicUpdatesPage() {
           high-impact sequence that makes full use of the new continuous LED
           cube.
         </p>
-        <video autoPlay={false} controls>
+        <video
+          autoPlay={false}
+          controls
+          poster="/videoThumbs/lhf-tnt-thumbnail.jpg"
+          className="w-full h-auto"
+        >
           <source
             src="https://www.kwmedia.klockworks.xyz/projects/lhf/TNT-in-arena.mp4"
             type="video/mp4"
@@ -122,7 +133,14 @@ export default function LHFGraphicUpdatesPage() {
           Since this plays during the match, only lower screens and the ice are
           used—ensuring the sequence is both dramatic and non-intrusive.
         </p>
-        <video controls={false} muted autoPlay loop>
+        <video
+          controls={false}
+          muted
+          autoPlay
+          loop
+          poster="/videoThumbs/lhf-puck-spin-thumbnail.jpg"
+          className="w-full h-auto"
+        >
           <source
             src="https://www.kwmedia.klockworks.xyz/projects/lhf/PuckSpin.mp4"
             type="video/mp4"
@@ -137,7 +155,12 @@ export default function LHFGraphicUpdatesPage() {
           traveling across the ice. These sparks bounce off virtual walls to add
           depth and realism to the projection.
         </p>
-        <video autoPlay={false} controls>
+        <video
+          autoPlay={false}
+          controls
+          poster="/videoThumbs/lhf-player-entry-thumbnail.jpg"
+          className="w-full h-auto"
+        >
           <source
             src="https://www.kwmedia.klockworks.xyz/projects/lhf/Player-Entry.mp4"
             type="video/mp4"
@@ -151,7 +174,12 @@ export default function LHFGraphicUpdatesPage() {
           player presentations is a streamlined process—minimizing manual work
           while maintaining high visual consistency.
         </p>
-        <video autoPlay={false} controls>
+        <video
+          autoPlay={false}
+          controls
+          poster="/videoThumbs/lhf-lineup-thumbnail.jpg"
+          className="w-full h-auto"
+        >
           <source
             src="https://www.kwmedia.klockworks.xyz/projects/lhf/lineup.mp4"
             type="video/mp4"

@@ -38,7 +38,12 @@ export default function DCOPPage() {
           </span>
         </p>
 
-        <video autoPlay={false} controls>
+        <video 
+          autoPlay={false} 
+          controls 
+          poster="/videoThumbs/dcop-thumbnail.jpg"
+          className="w-full h-auto"
+        >
           <source
             src="https://www.kwmedia.klockworks.xyz/projects/dcop/DCOP%20Game%20Trailer%2001.mp4"
             type="video/mp4"
