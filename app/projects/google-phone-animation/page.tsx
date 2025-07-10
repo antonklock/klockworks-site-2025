@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import BackButton from "@/components/Common/BackButton";
 
 export const metadata: Metadata = {
-  title: "LHF Graphic Updates - Project",
-  description: "A detailed look at the LHF Graphic Updates project",
+  title: "Google Pixel 7 Regiounal Launch Animations",
+  description: "Short animations of the Google Pixel 7 phone",
 };
 
 export default function GooglePhoneAnimationPage() {
@@ -22,8 +22,18 @@ export default function GooglePhoneAnimationPage() {
       <div className="prose prose-lg font-mono">
         <h2 className="font-bold text-4xl mt-8 mb-2">TL;DR</h2>
         <p className="lead mb-6 mt-6">
-          Google&apos;s Pixel 7 launch animation. Created in Blender. More info
-          coming soon.
+          Working with{" "}
+          <a
+            href="https://www.nrgagency.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-kwRed hover:underline"
+          >
+            NRGAgency
+          </a>{" "}
+          for the Google&apos;s Pixel 7 retail launch. I Created animations of
+          the phone in Blender. The animations were used in a promotional tour
+          around Sweden, Norway and Denmark.
         </p>
       </div>
 

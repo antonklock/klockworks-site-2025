@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import NoiseBackground from "@/components/Styling/NoiseBackground";
 
 const baijamjuree = localFont({
   src: [
@@ -31,10 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${baijamjuree.className} antialiased`}>
-        <NoiseBackground className="opacity-[0.5]" />
-        {children}
-      </body>
+      <body className={`${baijamjuree.className} antialiased`}>{children}</body>
     </html>
   );
 }

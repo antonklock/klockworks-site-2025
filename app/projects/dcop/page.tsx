@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import BackButton from "@/components/Common/BackButton";
 
 export const metadata: Metadata = {
-  title: "DCOP - Project",
+  title: "DCOP - An on rails police simulator",
   description: "A detailed look at the DCOP project",
 };
 
@@ -20,9 +20,9 @@ export default function DCOPPage() {
       <div className="prose prose-lg font-mono">
         <h2 className="text-2xl font-bold">Project Overview</h2>
         <p className="lead mb-6 mt-6">
-          DCOP is a full motion video on rails shooter game. Created in Unity
-          together with John Eriksson. I was responsible for all programming and
-          technical implementations.
+          DCOP is a full motion video on rails shooter game for PC. Created in
+          Unity together with John Eriksson. I was responsible for all
+          programming and technical implementations.
         </p>
         <p className="lead mb-6 mt-6">
           More info coming soon! Until then check out the trailer or{" "}
