@@ -39,9 +39,9 @@ export default function RaiseYourGlassPage() {
           </a>{" "}
           we developed and produced &quot;Raise Your Glass&quot; a full-motion
           interactive music video experience. Set to their rousing sea
-          shanty-style music, this browser-based adventure casts the user as a
-          pirate waking up after a wild night, tasked with finding three coins
-          to settle their tavern debt before the song ends and their crew sails
+          shanty-style music, the browser-based adventure starts with a pirate
+          waking up after a wild night, tasked with finding three coins to
+          settle their tavern debt before the song ends and their crew sails
           without them.
         </p>
 
