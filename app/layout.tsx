@@ -22,6 +22,11 @@ const baijamjuree = localFont({
 export const metadata: Metadata = {
   title: "Klockworks",
   description: "Klockworks",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    viewportFit: 'cover'
+  },
 };
 
 export default function RootLayout({
