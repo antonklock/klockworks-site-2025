@@ -8,9 +8,6 @@ import { useState } from "react";
 
 const About = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [buttonPosition, setButtonPosition] = useState<
-    { x: number; y: number } | undefined
-  >();
 
   return (
     <div className="flex flex-col items-center justify-center w-full p-4 pt-16 pb-24">
@@ -32,14 +29,10 @@ const About = () => {
           <div className="mt-4 flex gap-2">
             {/* <Button href="mailto:anton@klockworks.se">Say hello!</Button> */}
             <div>
-              <SayHelloButton
-                setModalOpen={setModalOpen}
-                setButtonPosition={setButtonPosition}
-              />
+              <SayHelloButton setModalOpen={setModalOpen} />
               <SayHelloModal
                 onClose={() => setModalOpen(false)}
                 isOpen={modalOpen}
-                buttonPosition={buttonPosition}
               />
             </div>
           </div>

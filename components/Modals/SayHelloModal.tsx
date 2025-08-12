@@ -6,125 +6,84 @@ import gsap from "gsap";
 interface SayHelloModalProps {
   isOpen: boolean;
   onClose: () => void;
-  buttonPosition?: { x: number; y: number };
 }
 
-export default function SayHelloModal({
-  isOpen,
-  onClose,
-  buttonPosition,
-}: SayHelloModalProps) {
+export default function SayHelloModal({ isOpen, onClose }: SayHelloModalProps) {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [isClosing, setIsClosing] = useState(false);
 
   const backgroundRef = useRef<HTMLDivElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
 
-  // GSAP animations and modal behavior
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        onClose();
-      }
-    };
+  const handleCloseModal = async () => {
+    setIsClosing(true);
+    await animOut();
+    setIsClosing(false);
+    onClose();
+  };
 
-    if (isOpen) {
-      document.addEventListener("keydown", handleEscape);
-      // Prevent body scroll when modal is open
+  // Simple animations
+  useEffect(() => {
+    if (isOpen && !isClosing) {
       document.body.style.overflow = "hidden";
 
-      // Animate in
-      const tl = gsap.timeline();
-
-      // Calculate positions - use button position if available, otherwise screen center
-      const startPosition = buttonPosition || {
-        x: window.innerWidth / 2,
-        y: window.innerHeight / 2,
-      };
-
-      tl.set(backgroundRef.current, {
-        opacity: 0,
-      })
-        .set(modalRef.current, {
-          opacity: 0,
-          scale: 0.8,
-          x: startPosition.x - window.innerWidth / 2,
-          y: startPosition.y - window.innerHeight / 2,
-        })
-        .to(backgroundRef.current, {
-          opacity: 1,
-          duration: 0.3,
-          ease: "power2.out",
-        })
-        .to(
-          modalRef.current,
-          {
-            opacity: 1,
-            scale: 1,
-            x: 0,
-            y: 0,
-            duration: 0.6,
-            ease: "power2.out",
-          },
-          "-=0.1"
-        );
-    } else {
-      document.removeEventListener("keydown", handleEscape);
-      document.body.style.overflow = "unset";
-
-      // Animate out
-      const tl = gsap.timeline({
-        onComplete: () => {
-          if (backgroundRef.current && modalRef.current) {
-            gsap.set(backgroundRef.current, { display: "none" });
-            gsap.set(modalRef.current, { display: "none" });
-          }
-        },
-      });
-
-      // Calculate end position - use button position if available, otherwise screen center
-      const endPosition = buttonPosition || {
-        x: window.innerWidth / 2,
-        y: window.innerHeight / 2,
-      };
-
-      tl.to(modalRef.current, {
-        opacity: 0,
-        scale: 0.8,
-        x: endPosition.x - window.innerWidth / 2,
-        y: endPosition.y - window.innerHeight / 2,
-        duration: 0.4,
-        ease: "power2.in",
-      }).to(
+      // Simple fade in and scale up
+      gsap.fromTo(
         backgroundRef.current,
-        {
-          opacity: 0,
-          duration: 0.3,
-          ease: "power2.in",
-        },
-        "-=0.2"
+        { opacity: 0 },
+        { opacity: 1, duration: 0.3, ease: "power2.out" }
+      );
+
+      gsap.fromTo(
+        modalRef.current,
+        { opacity: 0, scale: 0.8, y: 20 },
+        { opacity: 1, scale: 1, y: 0, duration: 0.4, ease: "power2.out" }
       );
     }
 
     return () => {
-      document.removeEventListener("keydown", handleEscape);
       document.body.style.overflow = "unset";
     };
-  }, [isOpen, onClose, buttonPosition]);
+  }, [isOpen, onClose]);
+
+  const animOut = async () => {
+    document.body.style.overflow = "unset";
+
+    return new Promise((resolve, reject) => {
+      // Simple fade out and scale down
+      gsap.to(backgroundRef.current, {
+        opacity: 0,
+        duration: 0.2,
+        ease: "power2.in",
+      });
+
+      gsap
+        .to(modalRef.current, {
+          opacity: 0,
+          scale: 0.9,
+          y: -10,
+          duration: 0.3,
+          ease: "power2.in",
+        })
+        .then(resolve)
+        .catch(reject);
+    });
+  };
 
   // Handle form submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission logic here
     console.log({ email, subject, message });
-    onClose();
+    handleCloseModal();
   };
 
   // Handle background click to close modal
   const handleBackgroundClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
-      onClose();
+      handleCloseModal();
     }
   };
 
@@ -145,7 +104,7 @@ export default function SayHelloModal({
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-white text-2xl font-bold">Say Hello</h2>
           <button
-            onClick={onClose}
+            onClick={handleCloseModal}
             className="text-white hover:text-gray-300 transition-colors duration-200 text-2xl font-bold w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-800"
             aria-label="Close modal"
           >
@@ -215,6 +174,15 @@ export default function SayHelloModal({
           >
             Send Message
           </button>
+
+          <div className="text-center">
+            <a
+              href="mailto:anton@klockworks.se"
+              className="text-gray-400 hover:text-white text-sm transition-colors duration-200 underline decoration-gray-600 hover:decoration-white"
+            >
+              open email client
+            </a>
+          </div>
         </form>
       </div>
     </div>
