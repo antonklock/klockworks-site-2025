@@ -12,6 +12,7 @@ function SayHelloButton() {
     artboard: "Button",
     autoplay: true,
     stateMachines: "State Machine 1",
+    isTouchScrollEnabled: true,
   });
 
   // @ts-expect-error missing riveEvent type
