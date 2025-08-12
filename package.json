@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@rive-app/canvas": "^2.31.1",
     "@rive-app/react-canvas": "^4.23.0",
     "gsap": "^3.13.0",
     "hls.js": "^1.6.2",

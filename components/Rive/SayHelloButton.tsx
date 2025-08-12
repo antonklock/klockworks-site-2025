@@ -1,28 +1,36 @@
-import Rive from "@rive-app/react-canvas";
-import { Dispatch, SetStateAction } from "react";
+import { useRive } from "@rive-app/react-canvas";
+import { EventType, RiveEventType } from "@rive-app/canvas";
+import { useEffect } from "react";
 
-interface SayHelloButtonProps {
-  setModalOpen: Dispatch<SetStateAction<boolean>>;
-}
-
-function SayHelloButton(props: SayHelloButtonProps) {
-  const { setModalOpen } = props;
-
+function SayHelloButton() {
   const handleClick = () => {
-    setModalOpen(true);
+    window.location.href = "mailto:anton@klockworks.se";
   };
 
+  const { rive, RiveComponent } = useRive({
+    src: "/rive/sayHelloButton.riv",
+    artboard: "Button",
+    autoplay: true,
+    stateMachines: "State Machine 1",
+  });
+
+  // @ts-expect-error missing riveEvent type
+  const onRiveEventReceived = (riveEvent) => {
+    const eventData = riveEvent.data;
+    if (eventData.type === RiveEventType.General) {
+      if (eventData.name === "clicked") handleClick();
+    }
+  };
+
+  useEffect(() => {
+    if (rive) {
+      rive.on(EventType.RiveEvent, onRiveEventReceived);
+    }
+  }, [rive]);
+
   return (
-    <div
-      className="absolute w-[512px] h-[512px] -ml-[170px] -mt-56"
-      data-say-hello-button
-    >
-      <Rive
-        src="/rive/sayHelloButton.riv"
-        stateMachines="State Machine 1"
-        artboard="Button"
-        onClick={handleClick}
-      />
+    <div className="absolute w-[512px] h-[512px] -ml-[170px] -mt-56">
+      <RiveComponent />
     </div>
   );
 }

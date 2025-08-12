@@ -3,12 +3,8 @@
 import Image from "next/image";
 import { RotatingHeadline } from "./RotatingHeadline";
 import SayHelloButton from "../Rive/SayHelloButton";
-import SayHelloModal from "../Modals/SayHelloModal";
-import { useState } from "react";
 
 const About = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-
   return (
     <div className="flex flex-col items-center justify-center w-full p-4 pt-16 pb-24">
       <div className="flex flex-col md:flex-row items-center w-full max-w-4xl gap-6 md:gap-16">
@@ -27,14 +23,7 @@ const About = () => {
             typingSpeedMs={40}
           />
           <div className="mt-4 flex gap-2">
-            {/* <Button href="mailto:anton@klockworks.se">Say hello!</Button> */}
-            <div>
-              <SayHelloButton setModalOpen={setModalOpen} />
-              <SayHelloModal
-                onClose={() => setModalOpen(false)}
-                isOpen={modalOpen}
-              />
-            </div>
+            <SayHelloButton />
           </div>
         </div>
       </div>
