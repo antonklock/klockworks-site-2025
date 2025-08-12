@@ -2,10 +2,16 @@
 
 import Image from "next/image";
 import { RotatingHeadline } from "./RotatingHeadline";
-// import Button from "../Common/Button";
-import { SayHelloButton } from "../Rive/SayHelloButton";
+import SayHelloButton from "../Rive/SayHelloButton";
+import SayHelloModal from "../Modals/SayHelloModal";
+import { useState } from "react";
 
 const About = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [buttonPosition, setButtonPosition] = useState<
+    { x: number; y: number } | undefined
+  >();
+
   return (
     <div className="flex flex-col items-center justify-center w-full p-4 pt-16 pb-24">
       <div className="flex flex-col md:flex-row items-center w-full max-w-4xl gap-6 md:gap-16">
@@ -25,10 +31,17 @@ const About = () => {
           />
           <div className="mt-4 flex gap-2">
             {/* <Button href="mailto:anton@klockworks.se">Say hello!</Button> */}
-            <SayHelloButton />
-            {/* <Button variant="secondary" href="">
-              Entire Life story
-            </Button> */}
+            <div>
+              <SayHelloButton
+                setModalOpen={setModalOpen}
+                setButtonPosition={setButtonPosition}
+              />
+              <SayHelloModal
+                onClose={() => setModalOpen(false)}
+                isOpen={modalOpen}
+                buttonPosition={buttonPosition}
+              />
+            </div>
           </div>
         </div>
       </div>
