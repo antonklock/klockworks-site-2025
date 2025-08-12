@@ -15,6 +15,7 @@ const names = {
   blender: "Blender",
   unity: "Unity",
   premiere: "Premiere Pro",
+  nestjs: "NestJS",
 };
 
 const SoftwareIcon = ({ name }: SoftwareIconProps) => {

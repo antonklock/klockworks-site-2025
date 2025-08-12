@@ -1,21 +1,49 @@
 import Project from "./Project";
 import SectionTitle from "../Common/SectionTitle";
-import { projectsData } from "@/data/projectData";
+import { client } from "@/lib/sanity";
+import { groq } from "next-sanity";
 
-const ProjectList = () => {
+// The corrected interface to ensure type compatibility
+interface ProjectData {
+  _id: string;
+  title: string;
+  description: string;
+  software: string[];
+  date: string;
+  thumbnail: {
+    _type: "image";
+    asset: {
+      _ref: string;
+      _type: "reference";
+    };
+  };
+  slug: {
+    current: string;
+    _type: "slug";
+  };
+}
+
+const projectsQuery = groq`
+  *[_type == "project"] | order(date desc){
+    _id,
+    title,
+    description,
+    software,
+    date,
+    thumbnail,
+    slug
+  }
+`;
+
+const ProjectList = async () => {
+  const projects: ProjectData[] = await client.fetch(projectsQuery);
+
   return (
     <div id="projects" className="flex flex-col project-list">
       <SectionTitle icon="/icons/swoosh.svg" title="Latest projects" />
       <div className="flex flex-col gap-4 justify-center items-center">
-        {projectsData.map((projectItem, index) => (
-          <Project
-            key={"project_" + index}
-            image={projectItem.image}
-            title={projectItem.title}
-            description={projectItem.description}
-            software={projectItem.software}
-            link={projectItem.link}
-          />
+        {projects.map((projectItem) => (
+          <Project key={projectItem._id} project={projectItem} />
         ))}
       </div>
     </div>

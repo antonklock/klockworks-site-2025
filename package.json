@@ -15,9 +15,11 @@
     "gsap": "^3.13.0",
     "hls.js": "^1.6.2",
     "next": "15.1.7",
+    "next-sanity": "^10.0.10",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-photo-view": "^1.2.7"
+    "react-photo-view": "^1.2.7",
+    "sanity": "^4.3.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
