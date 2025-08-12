@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { RotatingHeadline } from "./RotatingHeadline";
-import Button from "../Common/Button";
+// import Button from "../Common/Button";
+import { SayHelloButton } from "../Rive/SayHelloButton";
 
 const About = () => {
   return (
@@ -23,7 +24,8 @@ const About = () => {
             typingSpeedMs={40}
           />
           <div className="mt-4 flex gap-2">
-            <Button href="mailto:anton@klockworks.se">Say hello!</Button>
+            {/* <Button href="mailto:anton@klockworks.se">Say hello!</Button> */}
+            <SayHelloButton />
             {/* <Button variant="secondary" href="">
               Entire Life story
             </Button> */}
