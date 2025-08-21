@@ -33,6 +33,19 @@ type AnimationPhase = "TYPING_IN" | "WAITING" | "TYPING_OUT";
 export function RotatingHeadline(props: Readonly<RotatingHeadlineProps>) {
   const { textColor, highlightColor, rotationSpeedMs, typingSpeedMs } = props;
 
+  // Generate a shuffled order of indices to randomize the rotation sequence
+  const shuffle = <T,>(array: T[]): T[] => {
+    const copy = array.slice();
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  };
+
+  const [order, setOrder] = useState<number[]>(() =>
+    shuffle(Array.from({ length: wordsToRotate.length }, (_, i) => i))
+  );
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayedWord, setDisplayedWord] = useState("");
   const [phase, setPhase] = useState<AnimationPhase>("TYPING_IN");
@@ -44,7 +57,7 @@ export function RotatingHeadline(props: Readonly<RotatingHeadlineProps>) {
     if (typingTimeoutRef.current) clearTimeout(typingTimeoutRef.current);
     if (phaseTimeoutRef.current) clearTimeout(phaseTimeoutRef.current);
 
-    const word = wordsToRotate[currentWordIndex];
+    const word = wordsToRotate[order[currentWordIndex]];
 
     switch (phase) {
       case "TYPING_IN": {
@@ -79,9 +92,12 @@ export function RotatingHeadline(props: Readonly<RotatingHeadlineProps>) {
             typingTimeoutRef.current = setTimeout(deleteLetter, typingSpeedMs);
           } else {
             typingTimeoutRef.current = null;
-            setCurrentWordIndex(
-              (prevIndex) => (prevIndex + 1) % wordsToRotate.length
-            );
+            const nextIndex = (currentWordIndex + 1) % wordsToRotate.length;
+            if (nextIndex === 0) {
+              // Completed a full cycle; reshuffle for a new random order
+              setOrder((prev) => shuffle(prev));
+            }
+            setCurrentWordIndex(nextIndex);
             setPhase("TYPING_IN");
           }
         };
@@ -94,7 +110,7 @@ export function RotatingHeadline(props: Readonly<RotatingHeadlineProps>) {
       if (typingTimeoutRef.current) clearTimeout(typingTimeoutRef.current);
       if (phaseTimeoutRef.current) clearTimeout(phaseTimeoutRef.current);
     };
-  }, [phase, currentWordIndex, rotationSpeedMs, typingSpeedMs]);
+  }, [phase, currentWordIndex, rotationSpeedMs, typingSpeedMs, order]);
 
   // --- Blinking Cursor Logic ---
   const [cursorVisible, setCursorVisible] = useState(true);
