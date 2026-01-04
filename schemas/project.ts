@@ -25,6 +25,14 @@ export const projectType = defineType({
       initialValue: () => new Date().toISOString(),
     }),
     defineField({
+      name: "priority",
+      title: "Priority",
+      type: "number",
+      description:
+        "Higher numbers appear first. If two projects have the same priority, they'll be sorted by date.",
+      initialValue: 0,
+    }),
+    defineField({
       name: "thumbnail",
       title: "Thumbnail",
       type: "image",

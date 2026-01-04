@@ -2,21 +2,17 @@ import Project from "./Project";
 import SectionTitle from "../Common/SectionTitle";
 import { client } from "@/lib/sanity";
 import { groq } from "next-sanity";
+import { SanityImageSource } from "@sanity/image-url";
 
 // The corrected interface to ensure type compatibility
 interface ProjectData {
   _id: string;
   title: string;
-  description: string;
-  software: string[];
+  description: string | null;
+  software: string[] | null;
   date: string;
-  thumbnail: {
-    _type: "image";
-    asset: {
-      _ref: string;
-      _type: "reference";
-    };
-  };
+  priority: number | null;
+  thumbnail: SanityImageSource | null;
   slug: {
     current: string;
     _type: "slug";
@@ -24,12 +20,13 @@ interface ProjectData {
 }
 
 const projectsQuery = groq`
-  *[_type == "project"] | order(date desc){
+  *[_type == "project"] | order(coalesce(priority, 0) desc, date desc){
     _id,
     title,
     description,
     software,
     date,
+    priority,
     thumbnail,
     slug
   }

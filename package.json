@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@portabletext/react": "^6.0.2",
+    "@portabletext/types": "^4.0.1",
     "@rive-app/canvas": "^2.31.1",
     "@rive-app/react-canvas": "^4.23.0",
     "gsap": "^3.13.0",

@@ -10,22 +10,38 @@ export default function NoiseBackground({
   className = "",
 }: NoiseBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [canvasHeight, setCanvasHeight] = useState(0);
+  const [canvasHeight, setCanvasHeight] = useState(
+    typeof window !== "undefined" ? window.innerHeight : 1000
+  );
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const updateHeight = () => {
-      if (containerRef.current) {
-        setCanvasHeight(containerRef.current.offsetHeight);
-      } else {
-        setCanvasHeight(window.innerHeight);
-      }
+      // Use the maximum of viewport height and document height to ensure full coverage
+      const viewportHeight = window.innerHeight;
+      const documentHeight = Math.max(
+        document.documentElement.scrollHeight,
+        document.documentElement.offsetHeight,
+        document.body.scrollHeight,
+        document.body.offsetHeight
+      );
+      setCanvasHeight(Math.max(viewportHeight, documentHeight));
     };
 
     updateHeight();
     window.addEventListener("resize", updateHeight);
+    // Also update when content changes (e.g., images loading, dynamic content)
+    const observer = new MutationObserver(updateHeight);
+    if (document.body) {
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+      });
+    }
     return () => {
       window.removeEventListener("resize", updateHeight);
+      observer.disconnect();
     };
   }, []);
 
