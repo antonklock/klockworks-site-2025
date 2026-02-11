@@ -16,6 +16,7 @@ const names = {
   unity: "Unity",
   premiere: "Premiere Pro",
   nestjs: "NestJS",
+  firebase: "Firebase",
 };
 
 const SoftwareIcon = ({ name }: SoftwareIconProps) => {
