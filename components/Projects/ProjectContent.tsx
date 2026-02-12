@@ -42,7 +42,7 @@ const ProjectContent = ({ content }: ProjectContentProps) => {
           const videoId = youtubeMatch[1];
           return (
             <div className="my-6">
-              <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+              <div className="relative w-full overflow-hidden rounded-lg" style={{ paddingBottom: "56.25%" }}>
                 <iframe
                   className="absolute top-0 left-0 w-full h-full"
                   src={`https://www.youtube.com/embed/${videoId}`}
@@ -63,7 +63,7 @@ const ProjectContent = ({ content }: ProjectContentProps) => {
           const videoId = vimeoMatch[1];
           return (
             <div className="my-6">
-              <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+              <div className="relative w-full overflow-hidden rounded-lg" style={{ paddingBottom: "56.25%" }}>
                 <iframe
                   className="absolute top-0 left-0 w-full h-full"
                   src={`https://player.vimeo.com/video/${videoId}`}
@@ -82,7 +82,7 @@ const ProjectContent = ({ content }: ProjectContentProps) => {
         
         // For direct video URLs, use HTML5 video element
         return (
-          <div className="my-6">
+          <div className="my-6 overflow-hidden rounded-lg">
             <video
               autoPlay={false}
               controls
@@ -139,6 +139,21 @@ const ProjectContent = ({ content }: ProjectContentProps) => {
         </blockquote>
       ),
     },
+    list: {
+      bullet: ({ children }) => (
+        <ul className="list-disc list-outside ml-6 my-6 space-y-2">
+          {children}
+        </ul>
+      ),
+      number: ({ children }) => (
+        <ol className="list-decimal list-outside ml-6 my-6 space-y-2">
+          {children}
+        </ol>
+      ),
+    },
+    listItem: ({ children }) => (
+      <li className="leading-relaxed">{children}</li>
+    ),
     marks: {
       strong: ({ children }) => <strong>{children}</strong>,
       em: ({ children }) => <em>{children}</em>,
