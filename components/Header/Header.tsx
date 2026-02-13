@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Hls from "hls.js";
 import ScrollArrow from "./ScrollArrow";
+import Image from "next/image";
 
 const Header = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -53,6 +54,14 @@ const Header = () => {
         muted
         playsInline
       />
+      <div className="absolute w-full h-screen flex items-center align-center justify-center pb-20">
+        <Image
+          width={800}
+          height={800}
+          src="/logos/kw-logo-stacked-white.svg"
+          alt="Klockworks logo"
+        />
+      </div>
       <button
         onClick={toggleMute}
         className="absolute bottom-4 right-4 z-20 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-all duration-200"
