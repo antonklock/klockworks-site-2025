@@ -54,12 +54,13 @@ const Header = () => {
         muted
         playsInline
       />
-      <div className="absolute w-full h-screen flex items-center align-center justify-center pb-20">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pb-20">
         <Image
           width={800}
-          height={800}
+          height={208}
           src="/logos/kw-logo-stacked-white.svg"
           alt="Klockworks logo"
+          className="h-auto w-[min(800px,90vw)] [filter:drop-shadow(0_4px_20px_rgba(0,0,0,0.1))_drop-shadow(0_2px_8px_rgba(0,0,0,0.3))]"
         />
       </div>
       <button
