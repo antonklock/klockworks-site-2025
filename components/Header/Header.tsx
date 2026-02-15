@@ -54,7 +54,7 @@ const Header = () => {
         muted
         playsInline
       />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pb-20 w-[95vw] max-w-[500px] md:max-w-[800px] sm:w-[min(800px,90vw)]">
+      {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pb-20 w-[95vw] max-w-[500px] md:max-w-[800px] sm:w-[min(800px,90vw)]">
         <Image
           width={800}
           height={800}
@@ -62,7 +62,7 @@ const Header = () => {
           alt="Klockworks logo"
           className="h-auto w-full [filter:drop-shadow(0_4px_20px_rgba(0,0,0,0.1))_drop-shadow(0_2px_8px_rgba(0,0,0,0.3))]"
         />
-      </div>
+      </div> */}
       <button
         onClick={toggleMute}
         className="absolute bottom-4 right-4 z-20 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-all duration-200"
