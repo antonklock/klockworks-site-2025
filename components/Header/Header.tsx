@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Hls from "hls.js";
 import ScrollArrow from "./ScrollArrow";
-import Image from "next/image";
+// import Image from "next/image";
 
 const Header = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
