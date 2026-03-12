@@ -121,6 +121,8 @@ export const projectType = defineType({
               { title: "Blender", value: "blender" },
               { title: "Premiere Pro", value: "premiere" },
               { title: "Unity", value: "unity" },
+              { title: "NestJS", value: "nestjs" },
+              { title: "Firebase", value: "firebase" },
             ],
           },
         },
